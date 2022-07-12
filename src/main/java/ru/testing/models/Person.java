@@ -13,7 +13,6 @@ public class Person {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     @NotEmpty(message = "Имя не должно быть пустым")
     @Size(min = 3, max = 100, message = "Имя должно быть от 3 до 100 символов длиной")
     @Column(name = "username")
@@ -22,9 +21,13 @@ public class Person {
     @Column(name = "password")
     private String password;
 
+
     @Email(message = "email должен быть коректным")
     @Column(name = "email")
     private String email;
+
+
+
 
     @Column(name = "photo")
     private String photo;
@@ -33,7 +36,7 @@ public class Person {
     private String role;
 
     @Column(name = "registrationdate")
-    private Date registrayionDate;
+    private Date registrationDate;
 
     @Column(name = "ban")
     private Boolean ban;
@@ -95,12 +98,12 @@ public class Person {
         this.role = role;
     }
 
-    public Date getRegistrayionDate() {
-        return registrayionDate;
+    public Date getRegistrationDate() {
+        return registrationDate;
     }
 
-    public void setRegistrayionDate(Date registrayionDate) {
-        this.registrayionDate = registrayionDate;
+    public void setRegistrationDate(Date registrationDate) {
+        this.registrationDate = registrationDate;
     }
 
     public Boolean getBan() {
@@ -120,7 +123,7 @@ public class Person {
                 ", email='" + email + '\'' +
                 ", photo='" + photo + '\'' +
                 ", role='" + role + '\'' +
-                ", registrayionDate=" + registrayionDate +
+                ", registrationDate=" + registrationDate +
                 ", ban=" + ban +
                 '}';
     }

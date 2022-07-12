@@ -22,12 +22,12 @@ public class RegistrationService {
     }
 
     @Transactional
-    public  void register(Person person) {
+    public void register(Person person) {
         person.setPassword(passwordEncoder.encode(person.getPassword()));
         person.setRole("ROLE_USER");
         person.setBan(false);
-        person.setRegistrayionDate(new Date());
-        person.setPhoto("");
+        person.setRegistrationDate(new Date());
+        person.setPhoto("https://img2.freepng.ru/20180327/ziq/kisspng-computer-icons-user-profile-avatar-profile-5ab9c9868b8c84.1893767815221251905716.jpg");
         peopleRepository.save(person);
     }
 }
