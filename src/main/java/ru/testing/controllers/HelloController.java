@@ -8,6 +8,8 @@ import ru.testing.security.PersonDetails;
 
 @Controller
 public class HelloController {
+
+
     @GetMapping("/hello")
     public String sayHello() {
         return "hello";
@@ -17,7 +19,6 @@ public class HelloController {
     public String userInfo() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         PersonDetails personDetails = (PersonDetails) authentication.getPrincipal();
-        System.out.println(personDetails.getPerson());
         return "hello";
     }
 
